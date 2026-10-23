@@ -1,0 +1,59 @@
+Palyul（二次开发版）出处与致谢
+Attribution and Notices
+
+======================================================================
+一、原项目 / Original Work
+======================================================================
+
+项目名称：Palyul
+原作者：coinchiang
+项目地址：https://gitee.com/coinchiang/palyul
+许可证：木兰宽松许可证，第 2 版（Mulan Permissive Software License, Version 2）
+        许可证全文见本仓库 LICENSE 文件，内容保持原样、未作任何修改。
+
+======================================================================
+二、本版本的改动 / Modifications
+======================================================================
+
+1. 新增 Shape 选项：Basic 模式下可选择 Rectangle（矩形）或 Ellipse（椭圆）词云，
+   Mask 模式下该选项自动置灰（形状由蒙版图片决定）。
+   实现方式：按用户设定的宽高现场生成椭圆形蒙版传给 wordcloud；
+   wordcloud 的蒙版约定为「255 = 屏蔽，0 = 可绘制文字」。
+
+2. 改动文件：
+   - src/model.py      新增 shape 选项字段
+   - src/controller.py 新增 buildEllipseMask()、getMask()，initWC() 改为使用 getMask()
+   - src/view.py       界面新增 Shape 单选组，并与模式切换联动
+
+3. 新增文件：NOTICE（本文件）、本地启动说明.md
+4. 未改动：LICENSE（原样保留）、原项目的全部功能与依赖
+
+注：本仓库已去除原仓库的提交历史，仅保留上述说明与原始 LICENSE，
+以满足 MulanPSL2 关于保留版权声明与许可声明的要求。
+
+======================================================================
+三、依赖的第三方开源项目 / Third-party Dependencies
+======================================================================
+
+wordcloud      https://pypi.org/project/wordcloud/       MIT License
+jieba          https://pypi.org/project/jieba/           Apache License 2.0
+ttkbootstrap   https://pypi.org/project/ttkbootstrap/    MIT License
+matplotlib     https://matplotlib.org/                   matplotlib license
+numpy          https://numpy.org/                         BSD 3-Clause License
+Pillow         https://python-pillow.org/                 HPND License
+
+======================================================================
+四、字体 / Font
+======================================================================
+
+resource/font/LXGWWenKaiLite-Regular.ttf
+霞鹜文楷（LXGW WenKai Lite），作者：落霞孤鹜
+许可证：SIL Open Font License 1.1
+项目地址：https://github.com/lxgw/LxgwWenKai-Lite
+
+======================================================================
+五、联系方式与免责声明 / Disclaimer
+======================================================================
+
+本项目按「原样」提供，不作任何明示或暗示的担保。
+如需反馈原项目的问题，请前往原仓库：https://gitee.com/coinchiang/palyul
